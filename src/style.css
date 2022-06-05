@@ -1,0 +1,151 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  header{
+    background-color: blue;
+    padding: 20px;
+   
+    justify-content: space-between;
+  }
+  header .nav a{
+    color: black;
+    text-decoration: none;
+    display: block;
+    margin: 0 5px;
+   
+  }
+  
+  header.nightMode{
+    background-color:brown;
+  }
+  header.dayMode{
+  background-color: cadetblue;
+  }
+  ul{
+  list-style: none;
+  }
+  
+  .display-flex{
+    display: flex;
+  }
+  header .logo{
+    font-size: 20px;
+    background: black;
+    color: white;
+    padding:6px 12px;
+    border-radius: 5px;
+  }
+  .hero{
+    background-color:orange;
+    background-image: 
+    url( "https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1575&q=80");
+    background-size: "cover";
+   
+  
+    background-repeat:no-repeat; 
+   font-size: 60px;
+    padding: 20px;
+    height: 70vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  button{
+    background-color:orange;
+    border-radius: 5px;
+    padding: 5%;
+    margin: 5%;
+    -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  -ms-border-radius:4px;
+  -o-border-radius:4px;
+  }
+  button:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  
+  
+  footer{
+    background-color: lightblue;
+    padding: 20px;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+  
+  }
+  
+.card-container{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+}
+.card{
+  margin:20px ;
+  position: relative;
+  overflow: hidden;
+  
+}
+.card img{
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  object-fit: cover;
+}
+.card.active button{
+  background-color: cadetblue;
+}
+
+.card .icon{
+  height: auto;
+  width:20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transform: translateY(-120%);
+  transition: all ease 0.5s;
+opacity: 0;
+}
+.card.active .icon{
+  transform: translateY(0);
+  opacity: 1;
+}
+aside img{
+
+  height: 100px;
+  width: 100px;
+margin-left: 4px;
+margin-bottom: 5px;
+ border-radius: 10px;
+}
+aside h3{
+  margin-bottom: 20px;
+}
+
+aside .favImage{
+  position: relative;
+}
+.fa-times-circle{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+  color: wheat;
+  cursor: pointer;
+  transition: color ease 0.3s;
+}
+.fa-times-circle:hover{
+  color: red;
+}
