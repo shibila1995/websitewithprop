@@ -27,7 +27,9 @@ function MyApp(){
    let [favImages,setfavImages] = useState([])   //destructuring images and favimages is collection of images,ie,array 
   
   //get all favrite images it is displayed under favrte section which is in app.js 
-  
+  function getFavImages(imgsrc){
+    setfavImages([...favImages,imgsrc])
+   }
 //lets remove fav image when close btn is clicked
    function RemoveFavImagefunction(imgsrc){
     setfavImages([...favImages].filter((currentImage) => { 
@@ -62,7 +64,9 @@ function MyApp(){
                               email:cardItem.email
                               }
                            }
-                   
+                    favImagefunction = {
+                        getFavImages
+                    }
               
           /> //(cardContent is an attribute and object{imgsrc...to email}is passed),two {{}}is given first is we are gng to write js and the scnd one is to write object.
 
