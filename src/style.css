@@ -9,7 +9,7 @@
     box-sizing: border-box;
   }
   header{
-    background-color: blue;
+    background-color: rgb(189, 157, 14);
     padding: 20px;
    
     justify-content: space-between;
@@ -19,6 +19,9 @@
     text-decoration: none;
     display: block;
     margin: 0 5px;
+    font-size: 25px;
+    font-family:'Times New Roman', Times, serif;
+    padding: 5px;
    
   }
   
@@ -26,7 +29,7 @@
     background-color:brown;
   }
   header.dayMode{
-  background-color: cadetblue;
+    background-color:#ffa500;
   }
   ul{
   list-style: none;
@@ -58,8 +61,13 @@
     justify-content: center;
     align-items: center;
   }
+  .title{
+    padding: 20px;
+    color: rgb(6, 6, 59);
+    font-size: 40px;
+  }
   button{
-    background-color:orange;
+    background-color:#ffa500;
     border-radius: 5px;
     padding: 5%;
     margin: 5%;
@@ -76,7 +84,7 @@
   
   
   footer{
-    background-color: lightblue;
+    background-color: rgb(7, 10, 43);
     padding: 20px;
     display: flex;
     align-items:center;

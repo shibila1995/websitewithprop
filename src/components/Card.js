@@ -17,14 +17,16 @@ let[classState,setclassState]=activeClass;//destructuring for active class state
 function addToFavorite(imgsrc){ //img is passing as argument
   setbtnTextState((previousState)=>{     //passing another function (previousState) inside (setbtnTextState
   
-    if(previousState=== "Add to favorite") {
+    if(previousState === "Add to favorite") {
           props.favImagefunction(imgsrc);      //getFavImages function is defined in App.js and img is passed inside props
           return "Added to favorite";
     }
   else{
-    return "Add to favorite"
+    
+    
+
     props.RemoveImagefunction(imgsrc);
-   
+    return "Add to favorite";
   }
  });
 
@@ -38,6 +40,8 @@ function addToFavorite(imgsrc){ //img is passing as argument
  })
 }
 
+
+
   return(
     <div className={`card ${classState}`}>
       <img src={heart} className="icon"/>
@@ -47,7 +51,11 @@ function addToFavorite(imgsrc){ //img is passing as argument
       <p>Email:{props.cardContent.email}</p>
       <button 
         onClick={ ()=> {
-            addToFavorite(props.cardContent.imgsrc); // inside arrow function write function and pass img as argument ,to pass property we use callback function
+          
+            addToFavorite(props.cardContent.imgsrc); 
+          
+           
+            // inside arrow function write function and pass img as argument ,to pass property we use callback function
       }}>
       {btnTextState}</button>
 

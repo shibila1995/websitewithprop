@@ -25,18 +25,23 @@ output-2,4,6,8*/
 function MyApp(){
 
    let [favImages,setfavImages] = useState([])   //destructuring images and favimages is collection of images,ie,array 
-  
+   console.log("favorite images are",favImages)
   //get all favrite images it is displayed under favrte section which is in app.js 
   function getFavImages(imgsrc){
-    setfavImages([...favImages,imgsrc])
+    setfavImages([...favImages,imgsrc]) //images are added to favImages through imgsrc
    }
+
+   
 //lets remove fav image when close btn is clicked
    function RemoveFavImagefunction(imgsrc){
     setfavImages([...favImages].filter((currentImage) => { 
+     
       return currentImage != imgsrc 
+      
     }))
    }
-   //lets map each favorite images
+ 
+   //lets map each favorite images and show in our page
    let userFavImages = favImages.map((imgsrc)=> {
       return(
         <div className="favImage">
@@ -45,7 +50,7 @@ function MyApp(){
               RemoveFavImagefunction(imgsrc)
           }}></i>
        
-          <img src={imgsrc} />
+          <img src={imgsrc} />  
         </div>
        
      )
@@ -66,6 +71,9 @@ function MyApp(){
                            }
                     favImagefunction = {
                         getFavImages
+                    }
+                    RemoveImagefunction ={
+                      RemoveFavImagefunction
                     }
               
           /> //(cardContent is an attribute and object{imgsrc...to email}is passed),two {{}}is given first is we are gng to write js and the scnd one is to write object.
