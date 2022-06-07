@@ -24,7 +24,30 @@ output-2,4,6,8*/
 //a functional component
 function MyApp(){
 
-   
+   let [favImages,setfavImages] = useState([])   //destructuring images and favimages is collection of images,ie,array 
+  
+  //get all favrite images it is displayed under favrte section which is in app.js 
+  
+//lets remove fav image when close btn is clicked
+   function RemoveFavImagefunction(imgsrc){
+    setfavImages([...favImages].filter((currentImage) => { 
+      return currentImage != imgsrc 
+    }))
+   }
+   //lets map each favorite images
+   let userFavImages = favImages.map((imgsrc)=> {
+      return(
+        <div className="favImage">
+          <i class="far fa-times-circle" 
+          onClick={ ()=>{
+              RemoveFavImagefunction(imgsrc)
+          }}></i>
+       
+          <img src={imgsrc} />
+        </div>
+       
+     )
+   })
 
 
 
@@ -39,9 +62,9 @@ function MyApp(){
                               email:cardItem.email
                               }
                            }
-                    
+                   
               
-          />//(cardContent is an attribute and object{imgsrc...to email}is passed),two {{}}is given first is we are gng to write js and the scnd one is to write object.
+          /> //(cardContent is an attribute and object{imgsrc...to email}is passed),two {{}}is given first is we are gng to write js and the scnd one is to write object.
 
   });
 
@@ -50,10 +73,12 @@ function MyApp(){
     <div>
   <Header/>
   <Hero/>
+  <h2 className="title">Destination </h2>
   <div className="card-container"> {card}</div>
   <aside >
-    <h3>Favorites</h3>
-    
+  <h2 className="title">Favorites </h2>
+    <div className="fav-card display-flex">
+  {userFavImages}</div>
   </aside>
   <Footer/>
   </div>
